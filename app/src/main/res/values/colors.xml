@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#f46951</color>
+    <color name="colorAccentLight">#e37663</color>
+    <color name="colorBlack">#111111</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorGray">#cccccc</color>
+    <color name="colorDarkerGray">#8f8c8c</color>
+    <color name="colorGray_teach_activity_tab">#F5F5F5</color>
+    <color name="colorGraylite">#f2f0f0</color>
+    <color name="colorots">#fcb040</color>
+
+
+    <color name="colorGreen">#82ca9c</color>
+    <color name="colorBlue">#b9e7f9</color>
+    <color name="colorPink">#f7c0d7</color>
+    <color name="colorPurple">#e8ceec</color>
+    <color name="colorDarkPurple">#bdabe0</color>
+    <color name="colorYellow">#FFDA6E</color>
+    <color name="colorPedaWhite">#F5F5F5</color>
+
+
+    <color name="tab_background_selected">#E9E9E9</color>
+    <color name="tab_background_unselected">#F5F5F5</color>
+
+
+
+    <color name="color1">#a3d39c</color>
+    <color name="color2">#82ca9c</color>
+    <color name="color3">#6dcff6</color>
+    <color name="color4">#ffb74d</color>
+    <color name="color5">#ce93d8</color>
+    <color name="color6">#c0ca33</color>
+    <color name="color7">#f49ac1</color>
+    <color name="color8">#ff9e80</color>
+    <color name="color9">#71c0cc</color>
+    <color name="color10">#7186cc</color>
+    <color name="color11">#16d248</color>
+    <color name="color12">#e66262</color>
+    <color name="color13">#c422b9</color>
+    <color name="color14">#229ec4</color>
+    <color name="color15">#999900</color>
+
+
+    <color name="color16">#FF7956</color>
+    <color name="color17">#dd9056</color>
+
+
+
+
+
+
+
+
+    <color name="color_heading">#333</color>
+    <color name="color_paragraph">#666</color>
+    <color name="color_caption">#999</color>
+    <color name="color_label">#ccc</color>
+
+
+
+
+
+</resources>

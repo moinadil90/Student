@@ -1,0 +1,114 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="medium_margin">18dp</dimen>
+    <dimen name="top_margin">12dp</dimen>
+    <dimen name="side_margin">10dp</dimen>
+    <dimen name="padding_lef_edittext">6dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_size_large">24dp</dimen>
+    <dimen name="text_size_medium">20dp</dimen>
+    <dimen name="text_size_medium_small">18dp</dimen>
+    <dimen name="text_size_small">12dp</dimen>
+    <dimen name="text_size_small_small">14dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+
+    <!--GLOBAl-->
+    <dimen name="toolBarSize">50dp</dimen>
+    <dimen name="error_text_size">10sp</dimen>
+    <dimen name="edit_text_hint">10sp</dimen>
+    <dimen name="edit_text_text">14sp</dimen>
+    <dimen name="bottom_button_text">13sp</dimen>
+    <dimen name="dropdown_text">13sp</dimen>
+    <dimen name="navigation_header_text">15sp</dimen>
+    <dimen name="pedagogy_text">12sp</dimen>
+    <!--LOGIN SIGN_UP-->
+    <dimen name="heading_login_sign_up">14sp</dimen>
+    <dimen name="heading_login_sign_up1">21sp</dimen>
+    <dimen name="or">12sp</dimen>
+    <dimen name="hide_show_forgot_password_change_loc_">10sp</dimen>
+    <!--OTS-->
+    <dimen name="welcome_user">18sp</dimen>
+    <dimen name="welcome_text">12sp</dimen>
+    <dimen name="langueag_location_text">13sp</dimen>
+    <dimen name="class_duration_text_size">10sp</dimen>
+
+
+    <!--MYClasses-->
+    <dimen name="class_name_size">14sp</dimen>
+    <dimen name="class_name_next_size">12sp</dimen>
+    <dimen name="class_percentage">12sp</dimen>
+    <!--Topics-->
+    <dimen name="pack_name_size">13sp</dimen>
+    <dimen name="view_all_pack_size">10sp</dimen>
+    <dimen name="topics_name_size">14sp</dimen>
+    <dimen name="topics_item_date_size">12sp</dimen>
+    <dimen name="topics_item_status_size">10sp</dimen>
+
+    <!--Teaching Objective-->
+    <dimen name="teach_obj_header_topic_size">12sp</dimen>
+    <dimen name="teach_obj_summary_size">13sp</dimen>
+    <dimen name="teach_obj_class_size">10sp</dimen>
+    <dimen name="teach_obj_teach_objective_size">13sp</dimen>
+    <dimen name="teach_obj_teach_objective_para_size">12sp</dimen>
+    <dimen name="teach_obj_resources_name_size">12sp</dimen>
+    <dimen name="teach_obj_resource_size">13sp</dimen>
+
+
+    <!--PlanMode-->
+    <dimen name="plan_mode_filter_size">10sp</dimen>
+    <dimen name="plan_mode_item_method_name_size">13sp</dimen>
+    <dimen name="plan_mode_item_timer_size">12sp</dimen>
+    <dimen name="plan_mode_item_paragraph_size">12sp</dimen>
+    <dimen name="plan_mode_item_tags_size">10sp</dimen>
+    <dimen name="plan_mode_item_select_size">12sp</dimen>
+    <dimen name="plan_mode_review_drag_n_drop_size">12sp</dimen>
+    <!--Method Detail-->
+    <dimen name="method_detail_activity_size">10sp</dimen>
+    <dimen name="method_detail_activity_item_summary_size">15sp</dimen>
+    <dimen name="method_detail_activity_item_select_size">10sp</dimen>
+    <dimen name="method_detail_activity_item_tags_size">10sp</dimen>
+
+    <!--Teach mode-->
+    <dimen name="teach_mode_header_size">14sp</dimen>
+    <!--Library mode-->
+    <dimen name="library_header_size">14sp</dimen>
+    <!--preview pack-->
+    <dimen name="preview_pack_author_name_size">10sp</dimen>
+    <dimen name="preview_pack_rating_size">12sp</dimen>
+    <dimen name="preview_pack_description_size">12sp</dimen>
+    <dimen name="preview_pack_description_paragraph_size">12sp</dimen>
+    <dimen name="preview_pack_item_name_size">10sp</dimen>
+    <dimen name="preview_pack_item_date_size">10sp</dimen>
+    <dimen name="preview_pack_item_paragraph_size">13sp</dimen>
+    <dimen name="preview_pack_item_comment_size">13sp</dimen>
+
+    <!--Rating1-->
+    <dimen name="rating1_congo_size">18sp</dimen>
+    <dimen name="rating1_congo_bottom_size">12sp</dimen>
+    <dimen name="rating1_stages_size">10sp</dimen>
+    <dimen name="rating1_stages_element_size">12sp</dimen>
+    <dimen name="rating1_time_size">19sp</dimen>
+
+    <!--Rating2-->
+    <dimen name="rating2_congo_size">19sp</dimen>
+    <dimen name="rating2_congo_bottom_size">12sp</dimen>
+    <dimen name="rating2_list_item_size">12sp</dimen>
+    <dimen name="rating2_stages_size">10sp</dimen>
+    <dimen name="rating2_stages_element_size">12sp</dimen>
+    <dimen name="rating2_time_size">19sp</dimen>
+    <dimen name="rating2_publish_msg_size">12sp</dimen>
+    <dimen name="rating2_publish_button_size">12sp</dimen>
+    <!--DashBoard-->
+    <dimen name="DashBoard_Heading1">16sp</dimen>
+    <dimen name="DashBoard_Heading2">14sp</dimen>
+    <dimen name="special_heading1">18sp</dimen>
+    <dimen name="special_heading2">15sp</dimen>
+    <dimen name="special_heading3">35sp</dimen>
+    <dimen name="top_margin_twice">24dp</dimen>
+    <dimen name="card_view_elevation">2dp</dimen>
+
+
+</resources>
