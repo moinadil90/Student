@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_weight="1"/>
         <TextView
             android:layout_width="match_parent"
@@ -95,25 +96,6 @@
             android:textColor="@color/colorWhite"
             android:gravity="center|center_vertical"
             android:text="seconds."/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/next"
-            android:layout_width="0px"
-            android:layout_weight=".99"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_height="wrap_content"
-            android:text="Next"
-            android:textStyle="bold"
-            style="@style/Button"/>
 
     </LinearLayout>
 

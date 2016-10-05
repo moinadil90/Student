@@ -25,8 +25,6 @@ package gurug.student.model;
     }
   },...
  */
-
-
 public class Question {
 
         private String id;

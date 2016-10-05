@@ -9,6 +9,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:name=".app.App"
         android:theme="@style/AppTheme.NoActionBar"
         android:label="@string/app_name"
         android:supportsRtl="true">
@@ -27,6 +28,7 @@
             android:name=".activity.SubjectActivity"
             android:label="Select a Subject"
             android:screenOrientation="portrait"
+            android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.MathsActivity"

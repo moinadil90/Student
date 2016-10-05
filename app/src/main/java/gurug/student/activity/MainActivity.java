@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.raizlabs.android.dbflow.sql.language.SQLite;
+
 import gurug.student.R;
+import gurug.student.model.Subject;
 
 public class MainActivity extends AppCompatActivity {
     private RelativeLayout mContent, mPlay, mProfile, mSettings;
@@ -36,8 +39,51 @@ public class MainActivity extends AppCompatActivity {
         mProfile.setOnClickListener(new Listener());
         mSettings.setOnClickListener(new Listener());
 
+
+        //if(!(SQLite.select().from(Subject.class).where(Subject_Table.subjectName.eq("MATHS")).queryList().size()>0)){
+        if(!(SQLite.select().from(Subject.class).queryList().size()>0)){
+            initSubjetsDataBase();
+        }
     }
 
+    private void initSubjetsDataBase() {
+
+            //Maths
+            Subject subject= new Subject();
+            subject.setSubjectName("Maths");
+            subject.setLevel("0");
+            subject.setPoints("10");
+            subject.setColor("#6dcff6");
+            subject.save();
+            //SCIENCE
+            subject= new Subject();
+            subject.setSubjectName("Science");
+            subject.setLevel("0");
+            subject.setPoints("10");
+            subject.setColor("#6dcff6");
+            subject.save();
+            //SOCIAL SCIENCE
+            subject= new Subject();
+            subject.setSubjectName("S.Science");
+            subject.setLevel("0");
+            subject.setPoints("10");
+            subject.setColor("#6dcff6");
+            subject.save();
+            //English
+            subject= new Subject();
+            subject.setSubjectName("English");
+            subject.setLevel("0");
+            subject.setPoints("10");
+            subject.setColor("#6dcff6");
+            subject.save();
+            //KANADA
+            subject= new Subject();
+            subject.setSubjectName("Kannada");
+            subject.setLevel("0");
+            subject.setPoints("10");
+            subject.setColor("#6dcff6");
+            subject.save();
+    }
     class Listener implements View.OnClickListener {
         @Override
         public void onClick(View v) {

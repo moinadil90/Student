@@ -5,12 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backrepeatmaths"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.QuestionsActivity"
     tools:showIn="@layout/activity_questions">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel1">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_weight="1"/>
         <TextView
             android:layout_width="match_parent"
@@ -54,6 +62,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/question"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:layout_gravity="center"
@@ -138,7 +147,7 @@
         android:layout_below="@+id/r3"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
         android:paddingBottom="5dp"
         android:layout_height="wrap_content">
         <ImageButton
@@ -166,7 +175,23 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"
             android:src="@drawable/close"/>
+    </RelativeLayout>
 
+    </RelativeLayout>
+
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/colorWhite"
+            android:layout_alignParentBottom="true"
+            style="?android:attr/progressBarStyleHorizontal"/>
     </RelativeLayout>
 
 

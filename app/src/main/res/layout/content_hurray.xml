@@ -8,8 +8,8 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activity.MathsActivity"
-    tools:showIn="@layout/activity_maths">
+    tools:context=".activity.HurrayActivity"
+    tools:showIn="@layout/activity_hurray">
 
 
     <LinearLayout
@@ -34,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_weight="1"/>
         <TextView
             android:layout_width="match_parent"
@@ -70,10 +71,11 @@
             android:textColor="@color/colorWhite"
             android:text="You just levelled up."/>
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/rel2"
         android:layout_below="@+id/rel1"
         android:orientation="horizontal">
@@ -84,24 +86,97 @@
             android:paddingTop="20dp"
             android:id="@+id/view1"
             android:gravity="center"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/rel3"
+        android:layout_below="@+id/rel2">
+        <View
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/dummy"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text1"
+            android:layout_toLeftOf="@+id/dummy"
+            android:gravity="center"
+            android:background="@drawable/circle"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:text="3"
+            android:textSize="50sp"
+            android:textColor="@color/colorWhite"/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_below="@+id/view1"
-            android:paddingTop="30dp"
-            android:text="AMRUTH BR"
-            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text1"
+            android:gravity="center"
+            android:layout_toLeftOf="@+id/dummy"
+            android:paddingTop="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
             android:textColor="@color/colorWhite"
-            android:textSize="15sp"/>
+            android:text="MATHS"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/dummy"
+            android:id="@+id/name"
+            android:textSize="15sp"
+            android:text="AMRUTH BR"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/dummy"
+            android:id="@+id/email"
+            android:textSize="15sp"
+            android:layout_below="@id/name"
+            android:text="amruth@gmail.com"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/dummy"
+            android:id="@+id/level"
+            android:textSize="15sp"
+            android:layout_below="@id/email"
+            android:text="Level: "/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/dummy"
+            android:id="@+id/points"
+            android:textSize="15sp"
+            android:layout_below="@id/level"
+            android:text="Points: "/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/dummy"
+            android:id="@+id/questions"
+            android:textSize="15sp"
+            android:layout_below="@id/points"
+            android:text="Questions: "/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/dummy"
+            android:id="@+id/accuracy"
+            android:textSize="15sp"
+            android:layout_below="@id/questions"
+            android:text="Accuracy: "/>
     </RelativeLayout>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/l5"
-        android:layout_below="@+id/rel2">
+        android:layout_below="@+id/rel3">
         <View
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -109,6 +184,7 @@
             android:paddingTop="20dp"
             android:gravity="center"/>
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"

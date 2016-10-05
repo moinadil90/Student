@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:background="@color/colorWhite"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/rel1"
+        android:layout_height="100dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/subject"
+            android:layout_below="@+id/icon"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:text="MATHS"
+            android:textStyle="bold"
+            android:layout_marginLeft="25dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorBlack"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/level"
+            android:layout_below="@id/subject"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="5dp"
+            android:gravity="center"
+            android:text="Level 1"
+            android:textColor="@color/color3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/level"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:id="@+id/point"
+            android:text="213/500 points"
+            android:textColor="@color/color3"/>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_gravity="center"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_below="@+id/point"
+            android:layout_weight="1"/>
+    </RelativeLayout>
+
+</LinearLayout>

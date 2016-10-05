@@ -14,6 +14,8 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.util.ArrayList;
+
 import gurug.student.R;
 import gurug.student.api.HttpCalls;
 import gurug.student.callback.OnTaskCompleted;
@@ -25,8 +27,9 @@ import gurug.student.util.Utility;
  * Created by moin on 29/9/16.
  */
 public class QuestionsActivity extends AppCompatActivity implements OnTaskCompleted {
-    private TextView mOption1, mOption2, mOption3, mOption4;
+    private TextView mOption1, mOption2, mOption3, mOption4, mQuestion;
     private ImageButton mPlay, mPause, mClose;
+    public static ArrayList<Question> mQuestionArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,7 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
         mPlay      =   (ImageButton) findViewById(R.id.play);
         mPause     =   (ImageButton) findViewById(R.id.pause);
         mClose     =   (ImageButton) findViewById(R.id.close);
+        mQuestion  =   (TextView) findViewById(R.id.question);
 
         mOption1.setOnClickListener(new Listener());
         mOption2.setOnClickListener(new Listener());
@@ -89,9 +93,8 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
 
     @Override
     public void onTaskError(String response, String lPurpose) {
-
+        Toast.makeText(QuestionsActivity.this,"Oops! An error here", Toast.LENGTH_SHORT).show();
     }
-
     class Listener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
