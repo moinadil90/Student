@@ -58,29 +58,29 @@ public class MainActivity extends AppCompatActivity {
             //SCIENCE
             subject= new Subject();
             subject.setSubjectName("Science");
-            subject.setLevel("0");
-            subject.setPoints("10");
+            subject.setLevel("1");
+            subject.setPoints("20");
             subject.setColor("#6dcff6");
             subject.save();
             //SOCIAL SCIENCE
             subject= new Subject();
             subject.setSubjectName("S.Science");
-            subject.setLevel("0");
-            subject.setPoints("10");
+            subject.setLevel("2");
+            subject.setPoints("30");
             subject.setColor("#6dcff6");
             subject.save();
             //English
             subject= new Subject();
             subject.setSubjectName("English");
-            subject.setLevel("0");
-            subject.setPoints("10");
+            subject.setLevel("3");
+            subject.setPoints("40");
             subject.setColor("#6dcff6");
             subject.save();
-            //KANADA
+            //Kannada
             subject= new Subject();
             subject.setSubjectName("Kannada");
-            subject.setLevel("0");
-            subject.setPoints("10");
+            subject.setLevel("4");
+            subject.setPoints("50");
             subject.setColor("#6dcff6");
             subject.save();
     }

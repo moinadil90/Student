@@ -50,6 +50,8 @@ public class SubjectsAdapter extends RecyclerView.Adapter<SubjectsAdapter.ViewHo
         Intent lIntent = new Intent(mContext, MathsActivity.class);
         lIntent.putExtra("subject", subject.getSubjectName());
         lIntent.putExtra("color", subject.getColor());
+        lIntent.putExtra("level", subject.getLevel());
+        lIntent.putExtra("points", subject.getPoints());
         mContext.startActivity(lIntent);
     }
 

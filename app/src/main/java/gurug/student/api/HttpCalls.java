@@ -42,7 +42,7 @@ public class HttpCalls {
                 JSONObject json = null;
                 String err = "err";
                 NetworkResponse response = error.networkResponse;
-                if (lPurpose.equals("QUESTION")) {
+                if (lPurpose.equals("QUESTION_API")) {
 
                     if (response != null && response.data != null) {
                         switch (response.statusCode) {

@@ -23,6 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/subjectName1"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_weight="1"
@@ -44,9 +45,10 @@
             android:layout_height="wrap_content"
             android:text="Level 2"
             android:textSize="20sp"
-            android:paddingLeft="10dp"
             android:textStyle="bold"
             android:layout_weight="1"
+            android:id="@+id/level1"
+            android:gravity="center"
             android:textColor="@color/colorWhite"/>
         <ProgressBar
             android:layout_width="match_parent"
@@ -59,9 +61,10 @@
             android:layout_height="wrap_content"
             android:text="Level 3"
             android:textSize="20sp"
-            android:paddingLeft="10dp"
             android:textStyle="bold"
             android:layout_weight="1"
+            android:id="@+id/level2"
+            android:gravity="center"
             android:textColor="@color/colorWhite"/>
 
     </LinearLayout>
@@ -111,20 +114,34 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/text1"
+                android:id="@+id/point_value"
                 android:layout_toLeftOf="@+id/dummy"
                 android:gravity="center"
                 android:background="@drawable/circle"
                 android:layout_marginRight="40dp"
                 android:layout_marginTop="10dp"
-                android:text="175 Points"
-                android:textSize="15sp"
+                android:text="175"
+                android:textSize="25sp"
                 android:textColor="@color/colorWhite"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/point_name"
+                android:layout_toLeftOf="@+id/dummy"
+                android:gravity="center"
+                android:layout_marginRight="40dp"
+                android:text="Points"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite"
+                android:layout_alignLeft="@+id/point_value"
+                android:layout_alignStart="@+id/point_value"
+                android:layout_below="@+id/points" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text1"
+                android:layout_below="@+id/point_value"
                 android:gravity="center"
+                android:id="@+id/subjectName"
                 android:layout_toLeftOf="@+id/dummy"
                 android:paddingTop="5dp"
                 android:textSize="18sp"

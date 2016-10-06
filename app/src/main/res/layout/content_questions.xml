@@ -115,6 +115,7 @@
             android:layout_below="@+id/option2"
             android:id="@+id/view2"
             android:layout_height="10dp"/>
+
         <TextView
             android:layout_width="match_parent"
             android:background="@drawable/border"
