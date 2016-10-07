@@ -86,4 +86,5 @@
         <item name="android:textSize">@dimen/pedagogy_text</item>
         <item name="android:textColor">@color/colorBlack</item>
     </style>
+
 </resources>

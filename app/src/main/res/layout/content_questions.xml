@@ -11,9 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.QuestionsActivity"
     tools:showIn="@layout/activity_questions">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
      <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,6 +32,7 @@
             android:paddingLeft="10dp"
             android:textStyle="bold"
             android:layout_weight="1"
+            android:gravity="center"
             android:textColor="@color/colorWhite"/>
         <ProgressBar
             android:layout_width="match_parent"
@@ -49,6 +48,7 @@
             android:paddingLeft="10dp"
             android:textStyle="bold"
             android:layout_weight="1"
+            android:gravity="center"
             android:textColor="@color/colorWhite"/>
 
     </LinearLayout>
@@ -77,9 +77,14 @@
             android:src="@drawable/images"
             />
     </LinearLayout>
+    <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView"
+            android:layout_below="@+id/l2">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:id="@+id/r3"
         android:paddingTop="20dp"
         android:paddingRight="10dp"
@@ -142,14 +147,16 @@
             android:layout_height="40dp" />
 
     </RelativeLayout>
+    </ScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_below="@+id/r3"
+        android:layout_below="@+id/scrollView"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="5dp"
+        android:id="@+id/image_buttons"
         android:layout_height="wrap_content">
         <ImageButton
             android:layout_width="30dp"
@@ -178,22 +185,26 @@
             android:src="@drawable/close"/>
     </RelativeLayout>
 
-    </RelativeLayout>
 
-    </ScrollView>
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ProgressBar
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_buttons"
+        android:id="@+id/rel2">
+       <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:max="3"
+            android:progress="0"
+            android:indeterminate="false"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:paddingTop="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:background="@color/colorWhite"
+            android:layout_height="40dp"
             android:layout_alignParentBottom="true"
-            style="?android:attr/progressBarStyleHorizontal"/>
+            android:progressDrawable="@drawable/white_progress"
+            />
     </RelativeLayout>
+    </RelativeLayout>
+
 
 
 </RelativeLayout>

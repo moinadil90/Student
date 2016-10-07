@@ -71,18 +71,36 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:gravity="center"
         android:id="@+id/l3"
         android:layout_below="@+id/l2">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:gravity="center"
             android:id="@+id/text3"
-            android:text="You need 125 more points to reach Level 3"/>
+            android:text="You need "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:gravity="center"
+            android:id="@+id/text4"
+            android:layout_toRightOf="@+id/text3"
+            android:text="125 "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:gravity="center"
+            android:id="@+id/text5"
+            android:layout_toRightOf="@+id/text4"
+            android:text=" more points to reach next level"/>
 
-        </RelativeLayout>
+
+    </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -164,7 +182,7 @@
                 android:layout_below="@id/name"
                 android:text="amruth@gmail.com"/>
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/dummy"
                 android:id="@+id/level"
@@ -172,16 +190,34 @@
                 android:layout_below="@id/email"
                 android:text="Level: "/>
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/level"
+                android:id="@+id/level_value"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@id/email"
+                android:text="4 "/>
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/dummy"
                 android:id="@+id/points"
                 android:textSize="15sp"
                 android:layout_below="@id/level"
                 android:text="Points: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/points"
+                android:id="@+id/points_value"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite"
+                android:layout_below="@id/level"
+                android:text="40"/>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/dummy"
                 android:id="@+id/questions"
@@ -189,13 +225,31 @@
                 android:layout_below="@id/points"
                 android:text="Questions: "/>
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/questions"
+                android:id="@+id/questions_value"
+                android:textSize="15sp"
+                android:layout_below="@id/points"
+                android:textColor="@color/colorWhite"
+                android:text="15 "/>
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/dummy"
                 android:id="@+id/accuracy"
                 android:textSize="15sp"
                 android:layout_below="@id/questions"
                 android:text="Accuracy: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/accuracy"
+                android:id="@+id/accuracy_value"
+                android:textSize="15sp"
+                android:layout_below="@id/questions"
+                android:textColor="@color/colorWhite"
+                android:text="85% "/>
         </RelativeLayout>
         <RelativeLayout
         android:layout_width="match_parent"

@@ -200,6 +200,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/l0"
+            android:paddingBottom="20dp"
             android:layout_marginLeft="@dimen/side_margin"
             android:layout_marginRight="@dimen/side_margin"
             android:layout_marginTop="@dimen/side_margin"
@@ -208,14 +209,6 @@
             android:orientation="vertical"
             android:visibility="visible">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorWhite"
-                android:padding="20dp"
-                android:textStyle="bold"
-                android:text="MY GEE-SCORES:"
-                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -226,6 +219,15 @@
                 android:background="@color/colorWhite"
                 android:orientation="vertical"
                 android:visibility="visible">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorWhite"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="-10dp"
+                    android:text="MY GEE-SCORES:"
+                    />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -235,6 +237,21 @@
                     android:id="@+id/maths1"
                     android:textColor="@color/color2"
                     android:text="Maths"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:max="3"
+                    android:progress="2"
+                    android:indeterminate="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_below="@+id/maths1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_gravity="center"
+                    android:progressDrawable="@drawable/blue_progress"
+                    />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -254,7 +271,22 @@
                 android:background="@color/colorWhite"
                 android:padding="10dp"
                 android:text="Science"
+                android:id="@+id/science1"
                 android:textColor="@color/color3"
+                />
+            <ProgressBar
+                android:id="@+id/progress_bar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="3"
+                android:progress="1"
+                android:indeterminate="false"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@+id/science1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/blue_progress"
                 />
 
         </LinearLayout>
@@ -276,7 +308,22 @@
                 android:background="@color/colorWhite"
                 android:padding="10dp"
                 android:text="Social Science"
+                android:id="@+id/social_science1"
                 android:textColor="@color/color4"
+                />
+            <ProgressBar
+                android:id="@+id/progress_bar3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="3"
+                android:progress="2"
+                android:indeterminate="false"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@+id/social_science1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/blue_progress"
                 />
 
         </LinearLayout>
@@ -298,8 +345,24 @@
                 android:background="@color/colorWhite"
                 android:padding="10dp"
                 android:text="English"
+                android:id="@+id/english1"
                 android:textColor="@color/color5"
                 />
+            <ProgressBar
+                android:id="@+id/progress_bar4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="3"
+                android:progress="1"
+                android:indeterminate="false"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@+id/english1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/blue_progress"
+                />
+
 
         </LinearLayout>
         <LinearLayout
@@ -320,7 +383,22 @@
                 android:background="@color/colorWhite"
                 android:padding="10dp"
                 android:text="Kannada"
+                android:id="@+id/Kannada1"
                 android:textColor="@color/color6"
+                />
+            <ProgressBar
+                android:id="@+id/progress_bar5"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="3"
+                android:progress="2"
+                android:indeterminate="false"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@+id/Kannada1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/blue_progress"
                 />
 
         </LinearLayout>

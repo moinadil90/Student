@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:id="@+id/rel1"
-        android:layout_height="100dp">
+        android:layout_height="120dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,6 +21,7 @@
             android:text="MATHS"
             android:textStyle="bold"
             android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
             android:textSize="20sp"
             android:textColor="@color/colorBlack"/>
         <TextView
@@ -42,15 +43,22 @@
             android:id="@+id/point"
             android:text="213/500 points"
             android:textColor="@color/color3"/>
+
         <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:max="3"
+            android:progress="2"
+            android:indeterminate="false"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="10dp"
+            android:layout_below="@+id/point"
+            android:layout_marginTop="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:layout_gravity="center"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_below="@+id/point"
-            android:layout_weight="1"/>
+            android:progressDrawable="@drawable/blue_progress"
+            />
     </RelativeLayout>
 
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -19,8 +20,9 @@ public class MathsActivity extends AppCompatActivity{
     private Button mPlay, mChallenge;
     private RelativeLayout mRelativeLayout;
     private TextView mSubjectName, mSubjectName1;
-    private TextView mLevel1, mLevel2;
-    private TextView mPoints;
+    private TextView mLevel1, mLevel2, mLevel3;
+    private TextView mPoints, mRequiredPoints, mPoints1;
+    private int mStorePoints = 0;
     private int sum = 1;
 
     @Override
@@ -44,6 +46,9 @@ public class MathsActivity extends AppCompatActivity{
         mLevel1         =   (TextView)findViewById(R.id.level1);
         mLevel2         =   (TextView)findViewById(R.id.level2);
         mPoints         =   (TextView)findViewById(R.id.point_value);
+        mLevel3         =   (TextView) findViewById(R.id.level_value);
+        mPoints1        =   (TextView) findViewById(R.id.points_value);
+        mRequiredPoints =   (TextView)findViewById(R.id.text4);
 
         mPlay.setOnClickListener(new Listener());
         mChallenge.setOnClickListener(new Listener());
@@ -57,7 +62,13 @@ public class MathsActivity extends AppCompatActivity{
         sum = sum + Integer.parseInt((getIntent().getStringExtra("level")));
         mLevel1.setText(getIntent().getStringExtra("level"));
         mLevel2.setText(sum+"");
+        mLevel3.setText(getIntent().getStringExtra("level"));
         mPoints.setText(getIntent().getStringExtra("points"));
+        mPoints1.setText(getIntent().getStringExtra("points"));
+        Log.i("Points", "Points"+ (500 - Integer.parseInt(getIntent().getStringExtra("points"))));
+        mStorePoints =  mStorePoints + (500 - Integer.parseInt(getIntent().getStringExtra("points")));
+        Log.i("Points1", "Points1"+mStorePoints);
+        mRequiredPoints.setText(mStorePoints+"");
     }
 
     class Listener implements View.OnClickListener {

@@ -15,6 +15,8 @@ import gurug.student.R;
 public class GameStartsActivity extends AppCompatActivity {
 
     private TextView mSecond;
+    private TextView mLevel1, mLevel2;
+    private int sum = 1;
     Timer timer;
     TimerTask timerTask;
     final Handler handler = new Handler();
@@ -33,7 +35,13 @@ public class GameStartsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().hide();
 
-        mSecond =   (TextView) findViewById(R.id.seconds);
+        mSecond      =   (TextView) findViewById(R.id.seconds);
+        mLevel1      =   (TextView) findViewById(R.id.level1);
+        mLevel2      =   (TextView) findViewById(R.id.level2);
+
+        //sum = sum + Integer.parseInt((getIntent().getStringExtra("level")));
+        //mLevel1.setText(getIntent().getStringExtra("level"));
+        //mLevel2.setText(sum+"");
     }
 
 
