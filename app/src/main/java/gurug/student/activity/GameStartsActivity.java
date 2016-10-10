@@ -76,6 +76,7 @@ public class GameStartsActivity extends AppCompatActivity {
                         if(i==0){
                             stoptimertask();
                             startActivity(new Intent(GameStartsActivity.this, QuestionsActivity.class));
+                            overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_right);
                             finish();
                         }
 

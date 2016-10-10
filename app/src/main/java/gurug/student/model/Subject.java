@@ -14,19 +14,19 @@ import gurug.student.database.DataBaseQuizUp;
 public class Subject extends BaseModel {
 
     @PrimaryKey(autoincrement = true)
-    private int id;
+    public int id;
 
     @Column
-    private String subjectName;
+    public String subjectName;
 
     @Column
-    private String level;
+    public String level;
 
     @Column
-    private String points;
+    public String points;
 
     @Column
-    private String color;
+    public String color;
 
 
     public int getId() {

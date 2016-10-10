@@ -48,6 +48,7 @@ public class ExitActivity extends AppCompatActivity{
                     //Toast.makeText(ExitActivity.this, "Exit Button has been clicked", Toast.LENGTH_SHORT).show();
                     finish();
                     startActivity(new Intent(ExitActivity.this, SubjectActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_right);
                     break;
             }
         }

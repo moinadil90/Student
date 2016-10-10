@@ -35,29 +35,35 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:weightSum="3"
         android:id="@+id/l2"
         android:layout_below="@+id/l1"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Level 2"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_weight="1"
             android:id="@+id/level1"
-            android:gravity="center"
             android:textColor="@color/colorWhite"/>
         <ProgressBar
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/progress_bar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_weight="1"/>
+            android:max="3"
+            android:progress="2"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/blue_progress"
+            />
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Level 3"
             android:textSize="20sp"

@@ -53,6 +53,7 @@ public class SubjectsAdapter extends RecyclerView.Adapter<SubjectsAdapter.ViewHo
         lIntent.putExtra("level", subject.getLevel());
         lIntent.putExtra("points", subject.getPoints());
         mContext.startActivity(lIntent);
+
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

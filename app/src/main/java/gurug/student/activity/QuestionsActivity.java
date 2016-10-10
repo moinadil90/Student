@@ -238,12 +238,14 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                 case R.id.play:
                     //Toast.makeText(QuestionsActivity.this, "Play Button has been clicked", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(QuestionsActivity.this, HurrayActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_right);
                     mPause.setVisibility(View.VISIBLE);
                     mPlay.setVisibility(View.GONE);
                     break;
                 case R.id.pause:
                     //Toast.makeText(QuestionsActivity.this, "Pause Button has been clicked", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(QuestionsActivity.this, HurrayActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_right);
                     mPlay.setVisibility(View.VISIBLE);
                     mPause.setVisibility(View.GONE);
                     break;
@@ -314,7 +316,6 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         GradientDrawable drawable3 = (GradientDrawable) mOption3.getBackground();
                         drawable3.setColor(Color.parseColor("#ffffff"));
 
-
                         mOption4.setText("Option4");
                         //mOption4.setBackgroundColor(Color.parseColor("#ffffff"));
                         mOption4.setBackgroundResource(R.drawable.border);
@@ -339,5 +340,11 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                 });
             }
         };
+    }
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        //mQuestionArrayList.set(0,"");
+        //mAnswerArrayList.set(0,"");
     }
 }

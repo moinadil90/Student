@@ -78,6 +78,7 @@ public class MathsActivity extends AppCompatActivity{
                 case R.id.play:
                     //Toast.makeText(MathsActivity.this, "Play Button has been clicked", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MathsActivity.this, GameStartsActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_right);
                     break;
 
                 case R.id.challenge:
