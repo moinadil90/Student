@@ -40,10 +40,10 @@
                 android:clickable="true"
                 android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
 
                     <ImageView
                         android:id="@+id/icon"
@@ -191,11 +191,11 @@
         android:background="@color/colorWhite"
         android:orientation="vertical">
 
-        </LinearLayout>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/l0">
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/l0">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -209,7 +209,7 @@
             android:orientation="vertical"
             android:visibility="visible">
 
-        <LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/l0"
@@ -242,245 +242,240 @@
                     android:layout_width="wrap_content"
                     android:layout_below="@+id/maths1"
                     android:layout_height="wrap_content">
-                <ProgressBar
-                    android:id="@+id/progress_bar"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:max="3"
-                    android:progress="2"
-                    android:indeterminate="false"
-                    android:layout_width="250dp"
-                    android:layout_height="10dp"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:progressDrawable="@drawable/blue_progress"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorWhite"
-                    android:gravity="right"
-                    android:id="@+id/maths1_score"
-                    android:textColor="@color/color2"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="-5dp"
-                    android:layout_toEndOf="@+id/progress_bar"
-                    android:layout_toRightOf="@+id/progress_bar"
-                    android:text="250/500"/>
+                    <ProgressBar
+                        android:id="@+id/progress_bar1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progress="10"
+                        android:indeterminate="false"
+                        android:layout_width="250dp"
+                        android:layout_height="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:progressDrawable="@drawable/green_progress"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:gravity="right"
+                        android:id="@+id/maths1_score"
+                        android:textColor="@color/color2"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="-5dp"
+                        android:layout_toEndOf="@+id/progress_bar"
+                        android:layout_toRightOf="@+id/progress_bar"
+                        android:text="250/500"/>
                 </RelativeLayout>
 
 
             </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/maths"
-            android:layout_marginLeft="@dimen/side_margin"
-            android:layout_marginRight="@dimen/side_margin"
-            android:id="@+id/science"
-            android:background="@color/colorWhite"
-            android:orientation="vertical"
-            android:visibility="visible">
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorWhite"
-                android:padding="10dp"
-                android:text="Science"
-                android:id="@+id/science1"
-                android:textColor="@color/color3"
-                />
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_below="@+id/science1"
-                android:layout_height="wrap_content">
-            <ProgressBar
-                android:id="@+id/progress_bar2"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:max="3"
-                android:progress="1"
-                android:indeterminate="false"
-                android:layout_width="250dp"
-                android:layout_height="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_gravity="center"
-                android:progressDrawable="@drawable/blue_progress"
-                />
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorWhite"
-                    android:gravity="right"
-                    android:id="@+id/science_score"
-                    android:textColor="@color/color2"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="-5dp"
-                    android:layout_toEndOf="@+id/progress_bar2"
-                    android:layout_toRightOf="@+id/progress_bar2"
-                    android:text="250/500"/>
-            </RelativeLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/science"
-            android:layout_marginLeft="@dimen/side_margin"
-            android:layout_marginRight="@dimen/side_margin"
-            android:id="@+id/social_science"
-            android:background="@color/colorWhite"
-            android:orientation="vertical"
-            android:visibility="visible">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorWhite"
-                android:padding="10dp"
-                android:text="Social Science"
-                android:id="@+id/social_science1"
-                android:textColor="@color/color4"
-                />
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_below="@+id/social_science1"
-                android:layout_height="wrap_content">
-            <ProgressBar
-                android:id="@+id/progress_bar3"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:max="3"
-                android:progress="2"
-                android:indeterminate="false"
-                android:layout_width="250dp"
-                android:layout_height="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_gravity="center"
-                android:progressDrawable="@drawable/blue_progress"
-                />
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorWhite"
-                    android:gravity="right"
-                    android:id="@+id/social_science_score"
-                    android:textColor="@color/color2"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="-5dp"
-                    android:layout_toEndOf="@+id/progress_bar3"
-                    android:layout_toRightOf="@+id/progress_bar3"
-                    android:text="250/500"/>
-            </RelativeLayout>
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/social_science"
-            android:layout_marginLeft="@dimen/side_margin"
-            android:layout_marginRight="@dimen/side_margin"
-            android:id="@+id/english"
-            android:background="@color/colorWhite"
-            android:orientation="vertical"
-            android:visibility="visible">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorWhite"
-                android:padding="10dp"
-                android:text="English"
-                android:id="@+id/english1"
-                android:textColor="@color/color5"
-                />
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_below="@+id/english1"
-                android:layout_height="wrap_content">
-            <ProgressBar
-                android:id="@+id/progress_bar4"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:max="3"
-                android:progress="1"
-                android:indeterminate="false"
-                android:layout_width="250dp"
-                android:layout_height="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_gravity="center"
-                android:progressDrawable="@drawable/blue_progress"
-                />
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/maths"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:id="@+id/science"
                 android:background="@color/colorWhite"
-                android:gravity="right"
-                android:id="@+id/english_score"
-                android:textColor="@color/color2"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="-5dp"
-                android:layout_toEndOf="@+id/progress_bar4"
-                android:layout_toRightOf="@+id/progress_bar4"
-                android:text="250/500"/>
-            </RelativeLayout>
+                android:orientation="vertical"
+                android:visibility="visible">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorWhite"
+                    android:padding="10dp"
+                    android:text="Science"
+                    android:id="@+id/science1"
+                    android:textColor="@color/color3"
+                    />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/science1"
+                    android:layout_height="wrap_content">
+                    <ProgressBar
+                        android:id="@+id/progress_bar2"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progress="5"
+                        android:indeterminate="false"
+                        android:layout_width="250dp"
+                        android:layout_height="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_gravity="center"
+                        android:progressDrawable="@drawable/blue_progress"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:gravity="right"
+                        android:id="@+id/science_score"
+                        android:textColor="@color/color2"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="-5dp"
+                        android:layout_toEndOf="@+id/progress_bar2"
+                        android:layout_toRightOf="@+id/progress_bar2"
+                        android:text="250/500"/>
+                </RelativeLayout>
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/english"
-            android:layout_marginLeft="@dimen/side_margin"
-            android:layout_marginRight="@dimen/side_margin"
-            android:id="@+id/Kannada"
-            android:background="@color/colorWhite"
-            android:orientation="vertical"
-            android:visibility="visible">
-
-            <TextView
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorWhite"
-                android:padding="10dp"
-                android:text="Kannada"
-                android:id="@+id/Kannada1"
-                android:textColor="@color/color6"
-                />
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_below="@+id/Kannada1"
-                android:layout_height="wrap_content">
-            <ProgressBar
-                android:id="@+id/progress_bar5"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:max="3"
-                android:progress="2"
-                android:indeterminate="false"
-                android:layout_width="250dp"
-                android:layout_height="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_gravity="center"
-                android:progressDrawable="@drawable/blue_progress"
-                />
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/science"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:id="@+id/social_science"
                 android:background="@color/colorWhite"
-                android:gravity="right"
-                android:id="@+id/kannada_score"
-                android:textColor="@color/color2"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="-5dp"
-                android:layout_toEndOf="@+id/progress_bar5"
-                android:layout_toRightOf="@+id/progress_bar5"
-                android:text="250/500"/>
-            </RelativeLayout>
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorWhite"
+                    android:padding="10dp"
+                    android:text="Social Science"
+                    android:id="@+id/social_science1"
+                    android:textColor="@color/color4"
+                    />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/social_science1"
+                    android:layout_height="wrap_content">
+                    <ProgressBar
+                        android:id="@+id/progress_bar3"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progress="15"
+                        android:indeterminate="false"
+                        android:layout_width="250dp"
+                        android:layout_height="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_gravity="center"
+                        android:progressDrawable="@drawable/yellow_progress"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:gravity="right"
+                        android:id="@+id/social_science_score"
+                        android:textColor="@color/color2"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="-5dp"
+                        android:layout_toEndOf="@+id/progress_bar3"
+                        android:layout_toRightOf="@+id/progress_bar3"
+                        android:text="250/500"/>
+                </RelativeLayout>
 
 
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/social_science"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:id="@+id/english"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorWhite"
+                    android:padding="10dp"
+                    android:text="English"
+                    android:id="@+id/english1"
+                    android:textColor="@color/color5"
+                    />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/english1"
+                    android:layout_height="wrap_content">
+                    <ProgressBar
+                        android:id="@+id/progress_bar4"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progress="10"
+                        android:indeterminate="false"
+                        android:layout_width="250dp"
+                        android:layout_height="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_gravity="center"
+                        android:progressDrawable="@drawable/purple_progress"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:gravity="right"
+                        android:id="@+id/english_score"
+                        android:textColor="@color/color2"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="-5dp"
+                        android:layout_toEndOf="@+id/progress_bar4"
+                        android:layout_toRightOf="@+id/progress_bar4"
+                        android:text="250/500"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/english"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:id="@+id/Kannada"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorWhite"
+                    android:padding="10dp"
+                    android:text="Kannada"
+                    android:id="@+id/kannada1"
+                    android:textColor="@color/color6"
+                    />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/Kannada1"
+                    android:layout_height="wrap_content">
+                    <ProgressBar
+                        android:id="@+id/progress_bar5"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progress="20"
+                        android:indeterminate="false"
+                        android:layout_width="250dp"
+                        android:layout_height="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_gravity="center"
+                        android:progressDrawable="@drawable/somecolor_progress"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:gravity="right"
+                        android:id="@+id/kannada_score"
+                        android:textColor="@color/color2"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="-5dp"
+                        android:layout_toEndOf="@+id/progress_bar5"
+                        android:layout_toRightOf="@+id/progress_bar5"
+                        android:text="250/500"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-        </ScrollView>
+    </ScrollView>
 </RelativeLayout>

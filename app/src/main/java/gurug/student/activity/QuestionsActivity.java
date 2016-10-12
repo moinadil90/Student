@@ -1,5 +1,6 @@
 package gurug.student.activity;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -47,6 +49,7 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
     Timer timer;
     TimerTask timerTask;
     final Handler handler = new Handler();
+    private Handler progressHandler= new Handler();;
     private static int i = 0;
 
     @Override
@@ -166,16 +169,18 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
     class Listener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            Progress();
+            //Progress();
+            Progress3();
             switch (v.getId()) {
                 case R.id.option1:
                     startTimer();
-                    Progress();
+                    //Progress();
                     if(randomNum == 1){
                         //mOption1.setBackgroundColor(Color.parseColor("#82ca9c"));
                         mOption1.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption1.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
+                        mAnswer.setBackgroundResource(R.color.colorGreen);
 
                     }
                     else {
@@ -183,6 +188,7 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         mOption1.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption1.getBackground();
                         drawable.setColor(Color.parseColor("#f49ac1"));
+                        mAnswer.setBackgroundResource(R.color.colorGreen);
                     }
                     randomNumber();
                     break;
@@ -193,12 +199,14 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         mOption2.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption2.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
+                        mAnswer.setBackgroundResource(R.color.colorGreen);
                     }
                     else {
                         //mOption2.setBackgroundColor(Color.parseColor("#f49ac1"));
                         mOption2.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption2.getBackground();
                         drawable.setColor(Color.parseColor("#f49ac1"));
+                        mAnswer.setBackgroundResource(R.color.colorGreen);
                     }
                     randomNumber();
                     break;
@@ -209,12 +217,14 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         mOption3.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption3.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
+                        mAnswer.setBackgroundResource(R.color.colorGreen);
                     }
                     else {
                         //mOption3.setBackgroundColor(Color.parseColor("#f49ac1"));
                         mOption3.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption3.getBackground();
                         drawable.setColor(Color.parseColor("#f49ac1"));
+                        mAnswer.setBackgroundResource(R.color.colorGreen);
                     }
                     randomNumber();
                     break;
@@ -226,12 +236,14 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         mOption4.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption4.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
+                        mAnswer.setBackgroundResource(R.color.colorGreen);
                     }
                     else {
                         //mOption4.setBackgroundColor(Color.parseColor("#f49ac1"));
                         mOption4.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption4.getBackground();
                         drawable.setColor(Color.parseColor("#f49ac1"));
+                        mAnswer.setBackgroundResource(R.color.colorGreen);
                     }
                     randomNumber();
                     break;
@@ -347,4 +359,44 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
         //mQuestionArrayList.set(0,"");
         //mAnswerArrayList.set(0,"");
     }
+    private void Progress2(){
+        new Thread(new Runnable() {
+
+            public void run() {
+                long timerEnd = System.currentTimeMillis() + 4 * 1000;
+
+                while (timerEnd >  System.currentTimeMillis()) {
+
+                    //progress = 4 - (int) (timerEnd - System.currentTimeMillis()) / 1000;
+                    progress = 4 - (int) (timerEnd - System.currentTimeMillis()) / 1000;
+                    // Update the progress bar
+
+                    progressHandler.post(new Runnable() {
+                        public void run() {
+                            mProgressBar.setProgress(progress);
+                        }
+                    });
+
+                    try {
+                        Thread.sleep(20);
+                    } catch (InterruptedException e) {
+                        Log.w("App","Progress thread cannot sleep");
+                    }
+                }
+                progressHandler.post(new Runnable() {
+                    public void run() {
+                        //okButton.performClick();
+                    }
+                });
+            }
+        }).start();
+    }
+    private void Progress3(){
+        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        ObjectAnimator progressAnimator = ObjectAnimator.ofInt(mProgressBar, "progress", 0, 100);
+        progressAnimator.setDuration(3000);
+        progressAnimator.setInterpolator(new LinearInterpolator());
+        progressAnimator.start();
+    }
+
 }

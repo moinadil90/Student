@@ -3,20 +3,30 @@ package gurug.student.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.util.ArrayList;
 
 import gurug.student.R;
 import gurug.student.activity.MathsActivity;
 import gurug.student.model.Subject;
+import gurug.student.model.Subject_Table;
+
+import static android.R.attr.progressDrawable;
+import static android.R.attr.settingsActivity;
+import static android.R.attr.textColor;
+import static gurug.student.R.id.point;
 
 public class SubjectsAdapter extends RecyclerView.Adapter<SubjectsAdapter.ViewHolder> implements OnItemClickListenerSubjects {
     private Context mContext;
     private ArrayList<Subject> mMySunjectsArrayList;
+    private TextView mMathsScore;
 
     public SubjectsAdapter(Context context, ArrayList<Subject> lMySubjectsArrayList) {
         mContext = context;
@@ -38,6 +48,9 @@ public class SubjectsAdapter extends RecyclerView.Adapter<SubjectsAdapter.ViewHo
         holder.mPoints.setText(subject.getPoints());
         holder.mLevel.setText(subject.getLevel());
         holder.mSubjectName.setText(subject.getSubjectName());
+        if(subject.getSubjectName().equals("Maths")){
+            Log.i("TAG","TAG: "+subject.getColor());
+        }
     }
 
     @Override
@@ -63,7 +76,7 @@ public class SubjectsAdapter extends RecyclerView.Adapter<SubjectsAdapter.ViewHo
             super(itemView);
             mSubjectName = (TextView) itemView.findViewById(R.id.subject);
             mLevel = (TextView) itemView.findViewById(R.id.level);
-            mPoints = (TextView) itemView.findViewById(R.id.point);
+            mPoints = (TextView) itemView.findViewById(point);
         }
 
         public void bind(final Subject item, final OnItemClickListenerSubjects listener) {
