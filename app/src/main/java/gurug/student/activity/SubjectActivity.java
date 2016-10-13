@@ -33,6 +33,6 @@ public class SubjectActivity extends AppCompatActivity{
         mSubjects = (RecyclerView) findViewById(R.id.subjects);
         mSubjects.setLayoutManager(new GridLayoutManager(SubjectActivity.this,2));
         mSubjects.setAdapter(new SubjectsAdapter(SubjectActivity.this, new ArrayList<Subject>(SQLite.select().from(Subject.class).queryList())));
-    }
+       }
 
 }

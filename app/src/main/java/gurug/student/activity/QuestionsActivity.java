@@ -4,6 +4,8 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -42,8 +44,10 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
     private ArrayList<String> mQuestionArrayList = new ArrayList<>();
     private ArrayList<String> mAnswerArrayList = new ArrayList<>();
     private static int randomNum;
-    private ProgressBar mProgressBar;
+    private ProgressBar mProgressBar, mProgressBar1;
     private static int progress = 0;
+    private TextView mLevel1, mLevel2;
+    private int sum1 = 0;
 
     private TextView mSecond;
     Timer timer;
@@ -75,6 +79,13 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
         mQuestion       =   (TextView) findViewById(R.id.question);
         mAnswer         =   (TextView) findViewById(R.id.option3);
         mProgressBar    =   (ProgressBar) findViewById(R.id.progress_bar);
+        mProgressBar1    =   (ProgressBar) findViewById(R.id.progress_bar1);
+        mLevel1         =   (TextView) findViewById(R.id.level1);
+        mLevel2         =   (TextView) findViewById(R.id.level2);
+
+        sum1 = MathsActivity.sum - 1;
+        mLevel1.setText(sum1+"");
+        mLevel2.setText(MathsActivity.sum+"");
 
         mOption1.setOnClickListener(new Listener());
         mOption2.setOnClickListener(new Listener());
@@ -84,27 +95,6 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
         mPlay.setOnClickListener(new Listener());
         mPause.setOnClickListener(new Listener());
         mClose.setOnClickListener(new Listener());
-    }
-
-    private void Progress() {
-        new CountDownTimer(4000, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                //this will be done every 1000 milliseconds ( 1 seconds )
-                //int progress = (int) (60000+(millisUntilFinished) / 1000);
-                progress++;
-                mProgressBar.setProgress(progress);
-            }
-
-            @Override
-            public void onFinish() {
-                //the progressBar will be invisible after 60 000 miliseconds ( 1 minute)
-                //Toast.makeText(QuestionsActivity.this, "Hi", Toast.LENGTH_SHORT).show();
-                progress = 0;
-                //mProgressBar.setBackgroundColor(Color.parseColor("#6dcff6"));
-            }
-
-        }.start();
     }
 
     @Override
@@ -169,22 +159,17 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
     class Listener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            //Progress();
-            Progress3();
+            Progress();
             switch (v.getId()) {
                 case R.id.option1:
                     startTimer();
-                    //Progress();
                     if(randomNum == 1){
-                        //mOption1.setBackgroundColor(Color.parseColor("#82ca9c"));
                         mOption1.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption1.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
                         mAnswer.setBackgroundResource(R.color.colorGreen);
-
                     }
                     else {
-                        //mOption1.setBackgroundColor(Color.parseColor("#f49ac1"));
                         mOption1.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption1.getBackground();
                         drawable.setColor(Color.parseColor("#f49ac1"));
@@ -195,14 +180,12 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                 case R.id.option2:
                     startTimer();
                     if(randomNum == 2){
-                        //mOption2.setBackgroundColor(Color.parseColor("#82ca9c"));
                         mOption2.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption2.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
                         mAnswer.setBackgroundResource(R.color.colorGreen);
                     }
                     else {
-                        //mOption2.setBackgroundColor(Color.parseColor("#f49ac1"));
                         mOption2.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption2.getBackground();
                         drawable.setColor(Color.parseColor("#f49ac1"));
@@ -213,14 +196,12 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                 case R.id.option3:
                     startTimer();
                     if(randomNum == 3){
-                        //mOption3.setBackgroundColor(Color.parseColor("#82ca9c"));
                         mOption3.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption3.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
                         mAnswer.setBackgroundResource(R.color.colorGreen);
                     }
                     else {
-                        //mOption3.setBackgroundColor(Color.parseColor("#f49ac1"));
                         mOption3.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption3.getBackground();
                         drawable.setColor(Color.parseColor("#f49ac1"));
@@ -229,17 +210,14 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                     randomNumber();
                     break;
                 case R.id.option4:
-                    //Toast.makeText(QuestionsActivity.this, "Option4 has been clicked", Toast.LENGTH_SHORT).show();
                     startTimer();
                     if(randomNum == 4){
-                        //mOption4.setBackgroundColor(Color.parseColor("#82ca9c"));
                         mOption4.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption4.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
                         mAnswer.setBackgroundResource(R.color.colorGreen);
                     }
                     else {
-                        //mOption4.setBackgroundColor(Color.parseColor("#f49ac1"));
                         mOption4.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable = (GradientDrawable) mOption4.getBackground();
                         drawable.setColor(Color.parseColor("#f49ac1"));
@@ -248,21 +226,18 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                     randomNumber();
                     break;
                 case R.id.play:
-                    //Toast.makeText(QuestionsActivity.this, "Play Button has been clicked", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(QuestionsActivity.this, HurrayActivity.class));
                     overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_right);
                     mPause.setVisibility(View.VISIBLE);
                     mPlay.setVisibility(View.GONE);
                     break;
                 case R.id.pause:
-                    //Toast.makeText(QuestionsActivity.this, "Pause Button has been clicked", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(QuestionsActivity.this, HurrayActivity.class));
                     overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_right);
                     mPlay.setVisibility(View.VISIBLE);
                     mPause.setVisibility(View.GONE);
                     break;
                 case R.id.close:
-                    //Toast.makeText(QuestionsActivity.this, "Close Button has been clicked", Toast.LENGTH_SHORT).show();
                     finish();
                     startActivity(new Intent(QuestionsActivity.this, MainActivity.class));
                     break;
@@ -283,6 +258,7 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
         questionApi();
         randomNumber();
         //startTimer();
+        Progress2();
     }
     public void startTimer() {
         //set a new Timer
@@ -293,7 +269,8 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
             initializeTimerTask();
         }
         //schedule the timer, after the first 50ms the TimerTask will run every 1000ms
-        timer.schedule(timerTask, 2000, 3000); //
+        timer.schedule(timerTask, 3000, 3000);
+        startMusic();
     }
 
     public void stoptimertask() {
@@ -317,19 +294,16 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         drawable.setColor(Color.parseColor("#ffffff"));
 
                         mOption2.setText("Option2");
-                        //mOption2.setBackgroundColor(Color.parseColor("#ffffff"));
                         mOption2.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable2 = (GradientDrawable) mOption2.getBackground();
                         drawable2.setColor(Color.parseColor("#ffffff"));
 
                         mOption3.setText("Option3");
-                        //mOption3.setBackgroundColor(Color.parseColor("#ffffff"));
                         mOption3.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable3 = (GradientDrawable) mOption3.getBackground();
                         drawable3.setColor(Color.parseColor("#ffffff"));
 
                         mOption4.setText("Option4");
-                        //mOption4.setBackgroundColor(Color.parseColor("#ffffff"));
                         mOption4.setBackgroundResource(R.drawable.border);
                         GradientDrawable drawable4 = (GradientDrawable) mOption4.getBackground();
                         drawable4.setColor(Color.parseColor("#ffffff"));
@@ -340,6 +314,7 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         stoptimertask();
                         try {
                             if (i > 90) {
+                                i=0;
                                 stoptimertask();
                                 Toast.makeText(QuestionsActivity.this, "Nore more questions to display. Soon we would be back with more questions!", Toast.LENGTH_LONG).show();
                             }
@@ -359,44 +334,24 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
         //mQuestionArrayList.set(0,"");
         //mAnswerArrayList.set(0,"");
     }
-    private void Progress2(){
-        new Thread(new Runnable() {
-
-            public void run() {
-                long timerEnd = System.currentTimeMillis() + 4 * 1000;
-
-                while (timerEnd >  System.currentTimeMillis()) {
-
-                    //progress = 4 - (int) (timerEnd - System.currentTimeMillis()) / 1000;
-                    progress = 4 - (int) (timerEnd - System.currentTimeMillis()) / 1000;
-                    // Update the progress bar
-
-                    progressHandler.post(new Runnable() {
-                        public void run() {
-                            mProgressBar.setProgress(progress);
-                        }
-                    });
-
-                    try {
-                        Thread.sleep(20);
-                    } catch (InterruptedException e) {
-                        Log.w("App","Progress thread cannot sleep");
-                    }
-                }
-                progressHandler.post(new Runnable() {
-                    public void run() {
-                        //okButton.performClick();
-                    }
-                });
-            }
-        }).start();
-    }
-    private void Progress3(){
+    private void Progress(){
         mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
         ObjectAnimator progressAnimator = ObjectAnimator.ofInt(mProgressBar, "progress", 0, 100);
         progressAnimator.setDuration(3000);
         progressAnimator.setInterpolator(new LinearInterpolator());
         progressAnimator.start();
+    }
+    private void Progress2(){
+        mProgressBar1 = (ProgressBar) findViewById(R.id.progress_bar1);
+        ObjectAnimator progressAnimator = ObjectAnimator.ofInt(mProgressBar1, "progress", 0, 80);
+        progressAnimator.setDuration(3000);
+        progressAnimator.setInterpolator(new LinearInterpolator());
+        progressAnimator.start();
+    }
+    private void startMusic(){
+        MediaPlayer mPlayer = MediaPlayer.create(getApplicationContext(), R.raw.music);
+        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        mPlayer.start();
     }
 
 }

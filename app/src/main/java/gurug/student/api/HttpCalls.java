@@ -59,7 +59,7 @@ public class HttpCalls {
                                 err = "Not able to connect to server, please try again later";
                                 break;
                         }
-                        //Additional cases
+                        //Additional cases to be shown here
                     }
 
                     if(err.equalsIgnoreCase("err")) {

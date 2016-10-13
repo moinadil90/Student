@@ -50,33 +50,50 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:id="@+id/level1"
+            android:layout_marginBottom="10dp"
             android:textColor="@color/colorWhite"/>
+        <LinearLayout
+            android:layout_width="150dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
         <ProgressBar
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/progress_bar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:max="3"
-            android:progress="2"
+            android:progress="10"
             android:indeterminate="false"
+            android:layout_marginTop="5dp"
             android:progressDrawable="@drawable/blue_progress"
             />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="250/500"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:id="@+id/score"
+                android:layout_gravity="center"
+                android:textColor="@color/colorWhite"/>
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Level 3"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_weight="1"
             android:id="@+id/level2"
             android:gravity="center"
+            android:layout_marginBottom="10dp"
             android:textColor="@color/colorWhite"/>
 
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:gravity="center"
         android:id="@+id/l3"
         android:layout_below="@+id/l2">

@@ -16,17 +16,13 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.raizlabs.android.dbflow.sql.language.Select;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import gurug.student.R;
 import gurug.student.model.Subject;
 import gurug.student.model.Subject_Table;
-
 import static android.R.id.progress;
 import static com.raizlabs.android.dbflow.sql.language.property.PropertyFactory.from;
 import static gurug.student.model.Subject_Table.points;
@@ -37,14 +33,13 @@ public class MainActivity extends AppCompatActivity {
     private int sum1 = 1;
     private List<Subject> mTableList1, mTableList2, mTableList3, mTableList4, mTableList5;
     private String value;
-    private static String mMaths= "demo", mScience= "demo", mSocialScience= "demo", mEnglish= "demo", mKannada = "demo";
-    private static String mMathsLevel= "demo", mScienceLevel= "demo", mSocialScienceLevel= "demo", mEnglishLevel= "demo", mKannadaLevel = "demo";
     private TextView mMathsSubject;
     private TextView mScienceSubject;
     private TextView mSocialScienceSubject;
     private TextView mEnglishSubject;
     private TextView mKannadaSubject;
-    private String progressString = "";
+    private static String mMaths= "demo", mScience= "demo", mSocialScience= "demo", mEnglish= "demo", mKannada = "demo";
+    private static String mMathsLevel= "demo", mScienceLevel= "demo", mSocialScienceLevel= "demo", mEnglishLevel= "demo", mKannadaLevel = "demo";;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         init();
     }
-
     private void init() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -68,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
         mSocialScienceScore   =   (TextView) findViewById(R.id.social_science_score);
         mEnglishScore         =   (TextView) findViewById(R.id.english_score);
         mKannadaScore         =   (TextView) findViewById(R.id.kannada_score);
-        mMathsSubject         =    (TextView) findViewById(R.id.maths1);
-        mScienceSubject       =    (TextView) findViewById(R.id.science1);
+        mMathsSubject         =   (TextView) findViewById(R.id.maths1);
+        mScienceSubject       =   (TextView) findViewById(R.id.science1);
         mSocialScienceSubject =   (TextView) findViewById(R.id.social_science1);
-        mEnglishSubject        =   (TextView) findViewById(R.id.english1);
+        mEnglishSubject       =   (TextView) findViewById(R.id.english1);
         mKannadaSubject       =   (TextView) findViewById(R.id.kannada1);
 
         mContent.setOnClickListener(new Listener());
@@ -84,9 +78,7 @@ public class MainActivity extends AppCompatActivity {
         if(!(SQLite.select().from(Subject.class).queryList().size()>0)){
             initSubjetsDataBase();
         }
-
     }
-
     private void initSubjetsDataBase() {
 
             //Maths
@@ -132,10 +124,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.mycontent:
                     Toast.makeText(MainActivity.this, "My Content has been clicked", Toast.LENGTH_SHORT).show();
                     break;
-
                 case R.id.play:
                     //Toast.makeText(MainActivity.this, "Play has been clicked", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, SubjectActivity.class));
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_right);
                     break;
                 case R.id.myprofile:
                     Toast.makeText(MainActivity.this, "My Profile has been clicked", Toast.LENGTH_SHORT).show();
@@ -146,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
     private void showData(ArrayList<Subject> mTableArrayList) {
        Log.i("TAG","TAG: "+mTableArrayList.toString());
         for(int i=0; i<mTableArrayList.size(); i++){
@@ -170,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
         mKannadaSubject.setText("Kannada | "+mKannadaLevel);
         startAnimation();
     }
-
     private void getData(){
 
         mTableList1 = SQLite.select().
@@ -231,10 +221,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
     private void startAnimation(){
             final ProgressBar mProgressBar1 = (ProgressBar) findViewById(R.id.progress_bar1);
-            ObjectAnimator progressAnimator1 = ObjectAnimator.ofInt(mProgressBar1, "progress", 0, 50);
+            ObjectAnimator progressAnimator1 = ObjectAnimator.ofInt(mProgressBar1, "progress", 0, Integer.parseInt(mMaths));
             progressAnimator1.setDuration(3000);
             progressAnimator1.setInterpolator(new LinearInterpolator());
             progressAnimator1.start();
@@ -258,10 +247,9 @@ public class MainActivity extends AppCompatActivity {
             progressAnimator4.start();
 
             final ProgressBar mProgressBar5 = (ProgressBar) findViewById(R.id.progress_bar5);
-            ObjectAnimator progressAnimator5 = ObjectAnimator.ofInt(mProgressBar5, "progress", 0, 90);
+            ObjectAnimator progressAnimator5 = ObjectAnimator.ofInt(mProgressBar5, "progress", 0, Integer.parseInt(mKannada));
             progressAnimator5.setDuration(3000);
             progressAnimator5.setInterpolator(new LinearInterpolator());
             progressAnimator5.start();
-
     }
 }

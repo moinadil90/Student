@@ -27,6 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@id/level1"
             android:text="Level 2"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -39,13 +40,13 @@
             android:layout_gravity="center"
             android:id="@+id/progress_bar1"
             style="?android:attr/progressBarStyleHorizontal"
-            android:max="3"
-            android:progress="2"
+            android:progress="0"
             android:indeterminate="false"
             android:progressDrawable="@drawable/blue_progress"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@id/level2"
             android:text="Level 3"
             android:textSize="20sp"
             android:textStyle="bold"

@@ -15,7 +15,7 @@
         android:supportsRtl="true">
         <activity
             android:name=".activity.MainActivity"
-            android:label="Dashboard"
+            android:label="Student"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

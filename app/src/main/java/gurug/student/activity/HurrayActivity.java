@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import gurug.student.R;
@@ -19,6 +20,8 @@ import gurug.student.R;
  */
 public class HurrayActivity extends AppCompatActivity{
     private Button mShare, mContinue;
+    private TextView mLevel1, mLevel2;
+    private int sum1 =0;
     Uri picUri; int width = 5; int height = 5;
 
     @Override
@@ -36,6 +39,12 @@ public class HurrayActivity extends AppCompatActivity{
 
         mShare       =   (Button)findViewById(R.id.share);
         mContinue    =   (Button)findViewById(R.id.continu);
+        mLevel1      =   (TextView)findViewById(R.id.level1);
+        mLevel2      =   (TextView)findViewById(R.id.level2);
+
+        sum1 = MathsActivity.sum - 1;
+        mLevel1.setText(sum1+"");
+        mLevel2.setText(MathsActivity.sum+"");
 
         mShare.setOnClickListener(new Listener());
         mContinue.setOnClickListener(new Listener());

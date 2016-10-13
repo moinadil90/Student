@@ -1,12 +1,15 @@
 package gurug.student.activity;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +26,9 @@ public class MathsActivity extends AppCompatActivity{
     private TextView mLevel1, mLevel2, mLevel3;
     private TextView mPoints, mRequiredPoints, mPoints1;
     private int mStorePoints = 0;
-    private int sum = 1;
+    public  static int sum = 1;
+    private TextView mScore;
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,8 @@ public class MathsActivity extends AppCompatActivity{
         mLevel3         =   (TextView) findViewById(R.id.level_value);
         mPoints1        =   (TextView) findViewById(R.id.points_value);
         mRequiredPoints =   (TextView)findViewById(R.id.text4);
+        mScore          =   (TextView) findViewById(R.id.score);
+        mProgressBar    =   (ProgressBar) findViewById(R.id.progress_bar);
 
         mPlay.setOnClickListener(new Listener());
         mChallenge.setOnClickListener(new Listener());
@@ -59,8 +66,9 @@ public class MathsActivity extends AppCompatActivity{
 
         mSubjectName.setText(getIntent().getStringExtra("subject"));
         mSubjectName1.setText(getIntent().getStringExtra("subject"));
-        sum = sum + Integer.parseInt((getIntent().getStringExtra("level")));
         mLevel1.setText(getIntent().getStringExtra("level"));
+        sum = 1;
+        sum = sum + Integer.parseInt((getIntent().getStringExtra("level")));
         mLevel2.setText(sum+"");
         mLevel3.setText(getIntent().getStringExtra("level"));
         mPoints.setText(getIntent().getStringExtra("points"));
@@ -69,6 +77,8 @@ public class MathsActivity extends AppCompatActivity{
         mStorePoints =  mStorePoints + (500 - Integer.parseInt(getIntent().getStringExtra("points")));
         Log.i("Points1", "Points1"+mStorePoints);
         mRequiredPoints.setText(mStorePoints+"");
+        mScore.setText(getIntent().getStringExtra("points")+"/500");
+        startAnimation();
     }
 
     class Listener implements View.OnClickListener {
@@ -88,4 +98,11 @@ public class MathsActivity extends AppCompatActivity{
         }
     }
 
+    private void startAnimation() {
+        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        ObjectAnimator progressAnimator1 = ObjectAnimator.ofInt(mProgressBar, "progress", 0, 70);
+        progressAnimator1.setDuration(3000);
+        progressAnimator1.setInterpolator(new LinearInterpolator());
+        progressAnimator1.start();
+    }
 }

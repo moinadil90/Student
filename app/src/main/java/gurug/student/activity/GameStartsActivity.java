@@ -1,11 +1,16 @@
 package gurug.student.activity;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.animation.LinearInterpolator;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.raizlabs.android.dbflow.sql.language.SQLite;
@@ -22,13 +27,15 @@ public class GameStartsActivity extends AppCompatActivity {
 
     private TextView mSecond;
     private TextView mLevel1, mLevel2;
-    private int sum = 0;
+    private int sum1 = 0;
     Timer timer;
     TimerTask timerTask;
     final Handler handler = new Handler();
     int i = 5;
     private List<Subject> mTableList1, mTableList2, mTableList3, mTableList4, mTableList5;
     private String mLevel1Data = "demo", mLevel2Data = "demo";
+    private int check = 0;
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +53,11 @@ public class GameStartsActivity extends AppCompatActivity {
         mSecond      =   (TextView) findViewById(R.id.seconds);
         mLevel1      =   (TextView) findViewById(R.id.level1);
         mLevel2      =   (TextView) findViewById(R.id.level2);
+        mProgressBar =   (ProgressBar) findViewById(R.id.progress_bar);
 
-        //sum = sum + Integer.parseInt((getIntent().getStringExtra("level")));
-        //mLevel1.setText(getIntent().getStringExtra("level"));
-        //mLevel2.setText(sum+"");
+        sum1 = MathsActivity.sum - 1;
+        mLevel1.setText(sum1+"");
+        mLevel2.setText(MathsActivity.sum+"");
     }
 
 
@@ -80,6 +88,7 @@ public class GameStartsActivity extends AppCompatActivity {
                 handler.post(new Runnable() {
                     public void run() {
                         mSecond.setText(""+i);
+                        startMusic();
                         i--;
                         if(i==0){
                             stoptimertask();
@@ -87,7 +96,6 @@ public class GameStartsActivity extends AppCompatActivity {
                             overridePendingTransition(R.anim.slide_out_left, R.anim.slide_out_right);
                             finish();
                         }
-
                     }
                 });
             }
@@ -97,63 +105,19 @@ public class GameStartsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         startTimer();
-        getData();
+        startAnimation();
     }
-    private void getData(){
+    private void startMusic(){
+        MediaPlayer mPlayer = MediaPlayer.create(getApplicationContext(), R.raw.music);
+        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        mPlayer.start();
 
-        mTableList1 = SQLite.select().
-                from(Subject.class).
-                where(Subject_Table.subjectName.eq("Maths")).
-                queryList();
-        Log.i("TAG","TAG"+mTableList1);
-        for(int i=0; i<mTableList1.size(); i++){
-            Log.i("TAG","TAG: "+ mTableList1.get(i).getPoints());
-            Log.i("TAG","TAG: "+ mTableList1.get(i).getColor());
-            mLevel1Data   =   mTableList1.get(i).getLevel();
-        }
-
-        mTableList2 = SQLite.select().
-                from(Subject.class).
-                where(Subject_Table.subjectName.eq("Science")).
-                queryList();
-        Log.i("TAG","TAG"+mTableList2);
-        for(int i=0; i<mTableList2.size(); i++){
-            Log.i("TAG","TAG: "+ mTableList2.get(i).getPoints());
-            mLevel1Data   =   mTableList2.get(i).getLevel();
-        }
-
-        mTableList3 = SQLite.select().
-                from(Subject.class).
-                where(Subject_Table.subjectName.eq("S.Science")).
-                queryList();
-        Log.i("TAG","TAG"+mTableList3);
-        for(int i=0; i<mTableList3.size(); i++){
-            Log.i("TAG","TAG: "+ mTableList3.get(i).getPoints());
-            mLevel1Data =   mTableList3.get(i).getLevel();
-        }
-
-        mTableList4 = SQLite.select().
-                from(Subject.class).
-                where(Subject_Table.subjectName.eq("English")).
-                queryList();
-        Log.i("TAG","TAG"+mTableList4);
-        for(int i=0; i<mTableList4.size(); i++){
-            Log.i("TAG","TAG: "+ mTableList4.get(i).getPoints());
-            mLevel1Data   =   mTableList4.get(i).getLevel();
-        }
-
-        mTableList5 = SQLite.select().
-                from(Subject.class).
-                where(Subject_Table.subjectName.eq("Kannada")).
-                queryList();
-        Log.i("TAG","TAG"+mTableList5);
-        for(int i=0; i<mTableList5.size(); i++){
-            Log.i("TAG","TAG: "+ mTableList5.get(i).getPoints());
-            mLevel1Data   =   mTableList5.get(i).getLevel();
-        }
-
-        mLevel1.setText(mLevel1Data);
-        sum = Integer.parseInt(mLevel1Data) + 1;
-        mLevel2.setText(""+sum);
+    }
+    private void startAnimation() {
+        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        ObjectAnimator progressAnimator1 = ObjectAnimator.ofInt(mProgressBar, "progress", 0, 70);
+        progressAnimator1.setDuration(3000);
+        progressAnimator1.setInterpolator(new LinearInterpolator());
+        progressAnimator1.start();
     }
 }
