@@ -14,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -341,6 +343,9 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         mQuestion.setText(mQuestionArrayList.get(i));
                         mAnswer.setText(mAnswerArrayList.get(i));
                         i++;
+                        //Animating Layouts
+                        Animation right = AnimationUtils.loadAnimation(QuestionsActivity.this, R.anim.slide_out_right);
+                        mRelativeLayout.startAnimation(right);
                         stoptimertask();
                         try {
                             if (i > 90) {
