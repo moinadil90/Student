@@ -1,6 +1,7 @@
 package gurug.student.activity;
 
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +36,8 @@ import gurug.student.model.Question;
 import gurug.student.util.RestConstants;
 import gurug.student.util.Utility;
 
+import static java.security.AccessController.getContext;
+
 /**
  * Created by moin on 29/9/16.
  */
@@ -48,6 +52,7 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
     private static int progress = 0;
     private TextView mLevel1, mLevel2;
     private int sum1 = 0;
+    private TextView mScore;
 
     private TextView mSecond;
     Timer timer;
@@ -55,6 +60,8 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
     final Handler handler = new Handler();
     private Handler progressHandler= new Handler();;
     private static int i = 0;
+    private static int mScoreCount = 150;
+    private RelativeLayout mRelativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,13 +86,16 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
         mQuestion       =   (TextView) findViewById(R.id.question);
         mAnswer         =   (TextView) findViewById(R.id.option3);
         mProgressBar    =   (ProgressBar) findViewById(R.id.progress_bar);
-        mProgressBar1    =   (ProgressBar) findViewById(R.id.progress_bar1);
+        mProgressBar1    =  (ProgressBar) findViewById(R.id.progress_bar1);
         mLevel1         =   (TextView) findViewById(R.id.level1);
         mLevel2         =   (TextView) findViewById(R.id.level2);
+        mScore          =   (TextView) findViewById(R.id.score);
+        mRelativeLayout =   (RelativeLayout) findViewById(R.id.rel3);
 
         sum1 = MathsActivity.sum - 1;
         mLevel1.setText(sum1+"");
         mLevel2.setText(MathsActivity.sum+"");
+        mScore.setText(mScoreCount+"/500");
 
         mOption1.setOnClickListener(new Listener());
         mOption2.setOnClickListener(new Listener());
@@ -168,6 +178,11 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         GradientDrawable drawable = (GradientDrawable) mOption1.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
                         mAnswer.setBackgroundResource(R.color.colorGreen);
+                        mScoreCount = mScoreCount + 10;
+                        if(mScoreCount <= 500)
+                            mScore.setText(mScoreCount+"/500");
+                        else
+                            mScore.setText(mScoreCount+"/1000");
                     }
                     else {
                         mOption1.setBackgroundResource(R.drawable.border);
@@ -184,6 +199,11 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         GradientDrawable drawable = (GradientDrawable) mOption2.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
                         mAnswer.setBackgroundResource(R.color.colorGreen);
+                        mScoreCount = mScoreCount + 10;
+                        if(mScoreCount <= 500)
+                            mScore.setText(mScoreCount+"/500");
+                        else
+                            mScore.setText(mScoreCount+"/1000");
                     }
                     else {
                         mOption2.setBackgroundResource(R.drawable.border);
@@ -200,6 +220,11 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         GradientDrawable drawable = (GradientDrawable) mOption3.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
                         mAnswer.setBackgroundResource(R.color.colorGreen);
+                        mScoreCount = mScoreCount + 10;
+                        if(mScoreCount <= 500)
+                        mScore.setText(mScoreCount+"/500");
+                        else
+                        mScore.setText(mScoreCount+"/1000");
                     }
                     else {
                         mOption3.setBackgroundResource(R.drawable.border);
@@ -216,6 +241,11 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         GradientDrawable drawable = (GradientDrawable) mOption4.getBackground();
                         drawable.setColor(Color.parseColor("#82ca9c"));
                         mAnswer.setBackgroundResource(R.color.colorGreen);
+                        mScoreCount = mScoreCount + 10;
+                        if(mScoreCount <= 500)
+                            mScore.setText(mScoreCount+"/500");
+                        else
+                            mScore.setText(mScoreCount+"/1000");
                     }
                     else {
                         mOption4.setBackgroundResource(R.drawable.border);

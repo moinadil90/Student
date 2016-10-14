@@ -20,13 +20,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="3"
-        android:paddingTop="20dp"
+        android:paddingTop="10dp"
         android:id="@+id/l1"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
             android:id="@id/level1"
             android:text="Level 2"
             android:textSize="20sp"
@@ -34,6 +35,10 @@
             android:layout_weight="1.5"
             android:gravity="center"
             android:textColor="@color/colorWhite"/>
+         <LinearLayout
+             android:layout_width="150dp"
+             android:orientation="vertical"
+             android:layout_height="wrap_content">
         <ProgressBar
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -45,7 +50,18 @@
             android:progressDrawable="@drawable/blue_progress"/>
         <TextView
             android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="150/500"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:id="@+id/score"
+            android:layout_gravity="center"
+            android:textColor="@color/colorWhite"/>
+             </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
             android:id="@id/level2"
             android:text="Level 3"
             android:textSize="20sp"
@@ -55,6 +71,12 @@
             android:textColor="@color/colorWhite"/>
 
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel3"
+        android:animateLayoutChanges="true"
+        android:layout_below="@+id/l1">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,15 +90,17 @@
             android:id="@+id/question"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
+            android:layout_marginTop="5dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:text="What was the name of the General of the  first battle of Panipat?"/>
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="20dp"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
             android:src="@drawable/images"
             />
     </LinearLayout>
@@ -89,7 +113,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:id="@+id/r3"
-        android:paddingTop="20dp"
+        android:paddingTop="0dp"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
         android:layout_below="@+id/l2"
@@ -101,9 +125,10 @@
             android:background="@drawable/border"
             android:id="@+id/option1"
             android:text="Option1"
-            android:textSize="20sp"
-            android:paddingLeft="10dp"
-            android:layout_height="40dp" />
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:paddingLeft="15dp"
+            android:layout_height="35dp" />
         <View
             android:layout_width="wrap_content"
             android:layout_below="@+id/option1"
@@ -114,10 +139,11 @@
             android:background="@drawable/border"
             android:id="@+id/option2"
             android:text="Option2"
-            android:textSize="20sp"
-            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:paddingLeft="15dp"
             android:layout_below="@+id/view1"
-            android:layout_height="40dp" />
+            android:layout_height="35dp" />
         <View
             android:layout_width="wrap_content"
             android:layout_below="@+id/option2"
@@ -129,10 +155,11 @@
             android:background="@drawable/border"
             android:id="@+id/option3"
             android:text="Option3"
-            android:textSize="20sp"
-            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:paddingLeft="15dp"
             android:layout_below="@+id/view2"
-            android:layout_height="40dp" />
+            android:layout_height="35dp" />
 
         <View
             android:layout_width="wrap_content"
@@ -144,21 +171,23 @@
             android:background="@drawable/border"
             android:id="@+id/option4"
             android:text="Option4"
-            android:textSize="20sp"
-            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:paddingLeft="15dp"
             android:layout_below="@+id/view3"
-            android:layout_height="40dp" />
+            android:layout_height="35dp" />
 
     </RelativeLayout>
     </ScrollView>
+    </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_below="@+id/scrollView"
-        android:paddingLeft="10dp"
+         <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_above="@+id/rel2"
+        android:paddingBottom="10dp"
+        android:paddingLeft="1dp"
         android:paddingRight="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="5dp"
+        android:paddingTop="1dp"
         android:id="@+id/image_buttons"
         android:layout_height="wrap_content">
         <ImageButton
@@ -187,12 +216,10 @@
             android:layout_marginRight="5dp"
             android:src="@drawable/close"/>
     </RelativeLayout>
-
-
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/image_buttons"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
         android:id="@+id/rel2">
        <ProgressBar
             android:id="@+id/progress_bar"
