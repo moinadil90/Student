@@ -72,6 +72,7 @@ public class SubjectsAdapter extends RecyclerView.Adapter<SubjectsAdapter.ViewHo
             Log.i("TAG","TAG: "+subject.getColor());
             holder.mLevel.setTextColor(Color.parseColor(subject.getColor()));
             holder.mPoints.setTextColor(Color.parseColor(subject.getColor()));
+            //include /500, level 1.
         }
         else if(subject.getSubjectName().equals("S.Science")){
             Log.i("TAG","TAG: "+subject.getColor());

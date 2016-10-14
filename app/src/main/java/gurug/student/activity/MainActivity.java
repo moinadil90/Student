@@ -225,6 +225,7 @@ public class MainActivity extends AppCompatActivity {
             final ProgressBar mProgressBar1 = (ProgressBar) findViewById(R.id.progress_bar1);
             ObjectAnimator progressAnimator1 = ObjectAnimator.ofInt(mProgressBar1, "progress", 0, Integer.parseInt(mMaths));
             progressAnimator1.setDuration(3000);
+            //Set it to 500ms as advised by Amruth
             progressAnimator1.setInterpolator(new LinearInterpolator());
             progressAnimator1.start();
 

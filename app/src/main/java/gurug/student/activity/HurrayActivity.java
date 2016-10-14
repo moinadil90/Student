@@ -48,6 +48,8 @@ public class HurrayActivity extends AppCompatActivity{
 
         mShare.setOnClickListener(new Listener());
         mContinue.setOnClickListener(new Listener());
+        //continue-> Quiz starts
+        //close->exit screen, as advised by Amruth and Shiv.
     }
 
     class Listener implements View.OnClickListener {

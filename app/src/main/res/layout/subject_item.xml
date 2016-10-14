@@ -14,6 +14,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/textview"
+            android:text="My Points"
+            android:background="@color/colorGreen"
+            android:visibility="gone"
+            android:textColor="@color/color3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/subject"
             android:layout_below="@+id/icon"
             android:gravity="center"

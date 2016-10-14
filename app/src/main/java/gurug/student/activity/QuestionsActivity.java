@@ -66,6 +66,7 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
     private RelativeLayout mRelativeLayout;
     private RelativeLayout mRelativeLayoutOverLay;
     private RelativeLayout mRelativeLayout3;
+    //Progress bar height 5dp as advised by Amruth
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,7 +152,7 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
 
     public void randomNumber(){
         Random rand = new Random();
-        randomNum = 1 + rand.nextInt((4 - 1) + 1);
+        randomNum = 1 + rand.nextInt(4);
         Log.i("TAG","TAG"+randomNum);
 
         switch (randomNum){
@@ -190,6 +191,7 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                             mScore.setText(mScoreCount+"/500");
                         else
                             mScore.setText(mScoreCount+"/1000");
+                        //CHange level no. accordingly
                     }
                     else {
                         mOption1.setBackgroundResource(R.drawable.border);
