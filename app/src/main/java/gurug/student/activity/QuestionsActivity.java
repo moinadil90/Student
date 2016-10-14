@@ -64,6 +64,8 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
     private static int i = 0;
     private static int mScoreCount = 150;
     private RelativeLayout mRelativeLayout;
+    private RelativeLayout mRelativeLayoutOverLay;
+    private RelativeLayout mRelativeLayout3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,11 +90,13 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
         mQuestion       =   (TextView) findViewById(R.id.question);
         mAnswer         =   (TextView) findViewById(R.id.option3);
         mProgressBar    =   (ProgressBar) findViewById(R.id.progress_bar);
-        mProgressBar1    =  (ProgressBar) findViewById(R.id.progress_bar1);
+        mProgressBar1   =  (ProgressBar) findViewById(R.id.progress_bar1);
         mLevel1         =   (TextView) findViewById(R.id.level1);
         mLevel2         =   (TextView) findViewById(R.id.level2);
         mScore          =   (TextView) findViewById(R.id.score);
         mRelativeLayout =   (RelativeLayout) findViewById(R.id.rel3);
+        mRelativeLayout3    = (RelativeLayout)findViewById(R.id.r3);
+        mRelativeLayoutOverLay  = (RelativeLayout) findViewById(R.id.image_buttons);
 
         sum1 = MathsActivity.sum - 1;
         mLevel1.setText(sum1+"");
@@ -172,6 +176,7 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
         @Override
         public void onClick(View v) {
             Progress();
+            mRelativeLayoutOverLay.setVisibility(View.VISIBLE);
             switch (v.getId()) {
                 case R.id.option1:
                     startTimer();
@@ -346,6 +351,7 @@ public class QuestionsActivity extends AppCompatActivity implements OnTaskComple
                         //Animating Layouts
                         Animation right = AnimationUtils.loadAnimation(QuestionsActivity.this, R.anim.slide_out_right);
                         mRelativeLayout.startAnimation(right);
+                        mRelativeLayoutOverLay.setVisibility(View.GONE);
                         stoptimertask();
                         try {
                             if (i > 90) {
